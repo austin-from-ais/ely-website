@@ -1,0 +1,201 @@
+%-------------------------
+% Elysa A. Barrera — Academic Resume
+% Ready for Overleaf (pdflatex)
+%-------------------------
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+% ── Colors ──
+\definecolor{forestgreen}{HTML}{2D5016}
+
+% ── Hyperlinks ──
+\hypersetup{
+    colorlinks=true,
+    urlcolor=forestgreen,
+}
+
+% ── Section formatting ──
+\titleformat{\section}{
+    \large\bfseries\scshape\color{forestgreen}
+}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% ── List formatting ──
+\setlist[itemize]{
+    leftmargin=1.2em,
+    itemsep=1pt,
+    parsep=0pt,
+    topsep=2pt,
+    label={\textcolor{forestgreen}{\textbullet}}
+}
+
+% ── Entry commands ──
+\newcommand{\entry}[4]{%
+    \textbf{#1} \hfill \textit{#2} \\
+    #3 \hfill \textcolor{forestgreen}{\small #4}
+}
+
+\newcommand{\entrysimple}[3]{%
+    \textbf{#1} \hfill \textit{#2} \\
+    \textcolor{forestgreen}{\small #3}
+}
+
+\newcommand{\entrynoplace}[2]{%
+    \textbf{#1} \\
+    \textcolor{forestgreen}{\small #2}
+}
+
+% ── No page numbers ──
+\pagestyle{empty}
+
+\begin{document}
+
+% ══════════════════════════════════════════
+% Header
+% ══════════════════════════════════════════
+\begin{center}
+    {\LARGE\bfseries\color{forestgreen} Elysa A. Barrera} \\[6pt]
+    Oakland Park, FL \quad$\cdot$\quad
+    \href{mailto:elysaaa1010@icloud.com}{elysaaa1010@icloud.com} \quad$\cdot$\quad
+    (954) 325-6718
+\end{center}
+
+\vspace{2pt}
+\begin{center}
+    \textit{Behavioral neuroscience graduate from FIU with a background spanning clinical observation, academic research, and functional neuroimaging. Currently investigating brain-behavior modeling in schizophrenia at the CNBD Lab.}
+\end{center}
+
+% ══════════════════════════════════════════
+% Education
+% ══════════════════════════════════════════
+\section{Education}
+
+\entry{Florida International University}{Miami, FL}
+{Bachelor of Science in Behavioral Neuroscience $\cdot$ GPA: 3.31}{Graduated August 2025}
+\begin{itemize}
+    \item Dean's List: Fall 2024, Spring 2025
+    \item Relevant Coursework: Anatomy \& Physiology, Clinical Neuroscience
+\end{itemize}
+
+\vspace{4pt}
+
+\entry{College Academy at Broward College}{Coconut Creek, FL}
+{Associate of Arts $\cdot$ GPA: 3.5}{Graduated May 2023}
+\begin{itemize}
+    \item Relevant Coursework: Biology and Chemistry
+\end{itemize}
+
+% ══════════════════════════════════════════
+% Work Experience
+% ══════════════════════════════════════════
+\section{Work Experience}
+
+\entry{CNBD Lab --- Florida International University}{Miami, FL}
+{Postgraduate Volunteer}{2026 --- Present}
+\begin{itemize}
+    \item Contribute to functional neuroimaging research examining brain-behavior relationships in schizophrenia
+\end{itemize}
+
+% ══════════════════════════════════════════
+% Skills
+% ══════════════════════════════════════════
+\section{Skills}
+
+\textbf{Research:} Functional Neuroimaging, MRI Protocols, REDCap, Experimental Design, Bibliometric Analysis, Literature Review, CITI Certified --- Human Subjects \\[3pt]
+\textbf{Technical:} R Programming, IBM SPSS, EHR Systems, Microsoft Office \\[3pt]
+\textbf{Clinical:} CPR/BLS, Phlebotomy, EKG, Patient Intake \& Vitals \\[3pt]
+\textbf{Language:} Spanish --- Proficient
+
+% ══════════════════════════════════════════
+% Volunteering
+% ══════════════════════════════════════════
+\section{Volunteering}
+
+\entrysimple{Adolescent Brain Cognitive Development (ABCD) Study}{Miami, FL}
+{March 2025}
+\begin{itemize}
+    \item Supported consent screening procedures and biological sample collection from study participants
+    \item Shadowed MRI technologists during neuroimaging scans and assisted with protocol adherence
+    \item Assisted research staff with participant data entry and documentation in REDCap
+\end{itemize}
+
+\vspace{4pt}
+
+\entrysimple{Dr.\ Steilnicki --- Atlantic Reconstructive}{Fort Lauderdale, FL}
+{June 2020 \& June 2022}
+\begin{itemize}
+    \item Shadowed surgical and clinical staff across patient consultations and procedures
+    \item Collected patient histories, recorded vitals, and assisted with clinical intake
+    \item Maintained and updated patient charts through EHR systems
+\end{itemize}
+
+% ══════════════════════════════════════════
+% Projects
+% ══════════════════════════════════════════
+\section{Projects}
+
+\entrynoplace{ThinkNeuro Research Intern}
+{May 2025}
+\begin{itemize}
+    \item Conducted bibliometric analysis of Computed Tomography literature using R, synthesizing relevant publications and generating figures for a research poster
+    \item Co-authored and presented findings at a virtual research symposium
+\end{itemize}
+
+\vspace{4pt}
+
+\entrysimple{Behavioral Experimental Design (BED) Capstone}{Miami, FL}
+{May 2025}
+\begin{itemize}
+    \item Co-developed a full research proposal for a dermatological study, including literature review, methodology, and projected outcomes
+\end{itemize}
+
+% ══════════════════════════════════════════
+% Clubs & Organizations
+% ══════════════════════════════════════════
+\section{Clubs \& Organizations}
+
+\entry{Nu Rho Psi}{Miami, FL}
+{Honor Society Member $\cdot$ Secretary}{August 2024 --- Present}
+\begin{itemize}
+    \item Coordinate speaker series, community service initiatives, and professional development programming
+\end{itemize}
+
+\vspace{4pt}
+
+\entry{Medically Engaged Diverse Students (MEDS)}{Miami, FL}
+{Office Member}{August 2024 --- Present}
+\begin{itemize}
+    \item Completed clinical certification workshops in BLS/CPR, EKG, and Phlebotomy through Medtrain
+    \item Organized fundraising campaigns for childhood cancer research and maternal health outreach programs
+\end{itemize}
+
+\vspace{4pt}
+
+\entry{Broward College Medical Volunteer Club}{Coconut Creek, FL}
+{Outreach Coordinator}{August 2022 --- May 2023}
+\begin{itemize}
+    \item Led donation drives for menstrual equity and care package initiatives serving underserved communities
+\end{itemize}
+
+% ══════════════════════════════════════════
+% Community Involvement
+% ══════════════════════════════════════════
+\section{Community Involvement}
+
+\entry{Connect Record Shop}{Fort Lauderdale, FL}
+{Volunteer $\rightarrow$ Sales Associate}{November 2020 --- Present}
+\begin{itemize}
+    \item Manage inventory organization and event preparation for a local independent retailer
+    \item Provide customer-facing support and coordinate with staff on day-to-day operations
+\end{itemize}
+
+\end{document}
