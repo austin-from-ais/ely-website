@@ -236,6 +236,18 @@
             margin-bottom: 0.25rem;
         }
 
+        .entry li a {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--green-mist);
+            transition: border-color 0.2s;
+        }
+
+        .entry li a:hover {
+            border-bottom-color: var(--green);
+        }
+
         .entry li::before {
             content: '';
             position: absolute;
@@ -500,7 +512,7 @@
                 <div class="entry-date">May 2025</div>
                 <ul>
                     <li>Conducted bibliometric analysis of Computed Tomography literature using R, synthesizing relevant publications and generating figures for a research poster</li>
-                    <li>Co-authored and presented findings at a virtual research symposium</li>
+                    <li>Co-authored and presented findings at a virtual research symposium — <a href="assets/CT Research poster.pdf" target="_blank">view poster</a></li>
                 </ul>
             </div>
 
@@ -511,7 +523,7 @@
                 </div>
                 <div class="entry-date">May 2025</div>
                 <ul>
-                    <li>Co-developed a full research proposal for a dermatological study, including literature review, methodology, and projected outcomes</li>
+                    <li>Co-developed a full research proposal for a dermatological study, including literature review, methodology, and projected outcomes — <a href="assets/BED Final Submission.pdf" target="_blank">view paper</a></li>
                 </ul>
             </div>
         </section>
