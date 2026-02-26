@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysa A. Barrera — Academic Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root {
+            --green: #2D5016;
+            --green-light: #3a6b1e;
+            --green-mist: #e8f0e4;
+            --green-faint: #f4f8f2;
+            --ink: #1a1a1a;
+            --gray: #5a5a5a;
+            --gray-light: #999;
+            --rule: #d4ddd0;
+            --white: #fefefe;
+            --serif: 'Cormorant Garamond', 'Georgia', serif;
+            --sans: 'Karla', 'Helvetica Neue', sans-serif;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ── Decorative top bar ── */
+        body::before {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green) 0%, var(--green-light) 40%, var(--green-mist) 100%);
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        /* ── Header ── */
+        header {
+            text-align: center;
+            padding-bottom: 2rem;
+            margin-bottom: 2.4rem;
+            border-bottom: 1px solid var(--rule);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--green);
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 2.6rem;
+            letter-spacing: 0.06em;
+            color: var(--green);
+            margin-bottom: 0.6rem;
+            line-height: 1.1;
+        }
+
+        .contact {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3rem 1.2rem;
+        }
+
+        .contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .contact .dot {
+            display: none;
+        }
+
+        .contact svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: var(--green-light);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .contact a {
+            color: var(--gray);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact a:hover {
+            border-bottom-color: var(--green);
+        }
+
+        /* ── Summary ── */
+        .summary {
+            font-family: var(--serif);
+            font-size: 1.12rem;
+            font-style: italic;
+            color: var(--gray);
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 2.4rem;
+            line-height: 1.65;
+        }
+
+        /* ── Sections ── */
+        section {
+            margin-bottom: 2.2rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--green);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.45rem;
+            border-bottom: 1px solid var(--rule);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ── Entry blocks ── */
+        .entry {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--green-mist);
+            transition: border-color 0.25s;
+        }
+
+        .entry:hover {
+            border-left-color: var(--green);
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.3rem 1rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .entry-title {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--ink);
+        }
+
+        .entry-location {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .entry-sub {
+            font-size: 0.88rem;
+            color: var(--gray);
+            margin-bottom: 0.1rem;
+        }
+
+        .entry-date {
+            font-size: 0.78rem;
+            color: var(--green-light);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .entry ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry li {
+            font-size: 0.88rem;
+            color: var(--gray);
+            line-height: 1.55;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.25rem;
+        }
+
+        .entry li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            border: 1px solid var(--green);
+            border-radius: 50%;
+        }
+
+        /* ── Skills (tag layout) ── */
+        .skills-group {
+            margin-bottom: 1rem;
+        }
+
+        .skills-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-label {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            padding: 0.25rem 0.7rem;
+            background: var(--green-faint);
+            border: 1px solid var(--green-mist);
+            border-radius: 2px;
+            color: var(--green);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--green-mist);
+            border-color: var(--green);
+        }
+
+        /* ── Footer ── */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--gray-light);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Subtle entrance animation ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header, .summary, section {
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .summary { animation-delay: 0.08s; }
+        section:nth-of-type(1) { animation-delay: 0.12s; }
+        section:nth-of-type(2) { animation-delay: 0.16s; }
+        section:nth-of-type(3) { animation-delay: 0.20s; }
+        section:nth-of-type(4) { animation-delay: 0.24s; }
+        section:nth-of-type(5) { animation-delay: 0.28s; }
+        section:nth-of-type(6) { animation-delay: 0.32s; }
+        section:nth-of-type(7) { animation-delay: 0.36s; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .page { padding: 2rem 1.2rem 3rem; }
+            h1 { font-size: 2rem; }
+            .entry-header { flex-direction: column; gap: 0; }
+            .contact { flex-direction: column; align-items: center; gap: 0.25rem; }
+        }
+
+        /* ── Print ── */
+        @media print {
+            body::before { display: none; }
+            .page { max-width: 100%; padding: 0; }
+            header, .summary, section { animation: none; }
+            .entry { border-left-color: var(--green) !important; }
+            .entry:hover { border-left-color: var(--green) !important; }
+            .tag { background: transparent; border-color: var(--green); }
+            a { color: var(--gray) !important; }
+            footer { display: none; }
+            h1 { font-size: 2.2rem; }
+            section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <header>
+            <h1>Elysa A. Barrera</h1>
+            <div class="contact">
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Oakland Park, FL
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:elysaaa1010@icloud.com">elysaaa1010@icloud.com</a>
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (954) 325-6718
+                </span>
+            </div>
+        </header>
+
+        <p class="summary">
+            To obtain a Research Assistant position related to the field of neuropsychology and demonstrate detail-oriented skills in data entry and tasks by executing work efficiently and effectively.
+        </p>
+
+        <!-- ── Education ── -->
+        <section>
+            <h2>Education</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Florida International University</span>
+                    <span class="entry-location">Miami, FL</span>
+                </div>
+                <div class="entry-sub">Bachelor of Science in Behavioral Neuroscience &middot; GPA: 3.31</div>
+                <div class="entry-date">Graduated August 2025</div>
+                <ul>
+                    <li>Dean's List: Fall 2024, Spring 2025</li>
+                    <li>Relevant Coursework: Anatomy &amp; Physiology, Clinical Neuroscience</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">College Academy at Broward College</span>
+                    <span class="entry-location">Coconut Creek, FL</span>
+                </div>
+                <div class="entry-sub">Associate of Arts &middot; GPA: 3.5</div>
+                <div class="entry-date">Graduated May 2023</div>
+                <ul>
+                    <li>Relevant Coursework: Biology and Chemistry</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ── Volunteering ── -->
+        <section>
+            <h2>Volunteering</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Adolescent Brain Cognitive Development (ABCD) Study</span>
+                    <span class="entry-location">Miami, FL</span>
+                </div>
+                <div class="entry-date">March 2025</div>
+                <ul>
+                    <li>Observed research assistants conduct consent screenings from parents and biological samples from participants; observed MRI technologist during scans and protocols</li>
+                    <li>Familiarized with REDCap system by assisting RAs with logging information</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Dr. Steilnicki — Atlantic Reconstructive</span>
+                    <span class="entry-location">Fort Lauderdale, FL</span>
+                </div>
+                <div class="entry-date">June 2020 &amp; June 2022</div>
+                <ul>
+                    <li>Observed doctor and medical professionals in a clinical setting</li>
+                    <li>Examined basic physicals and procedures: vitals, clinical safety, draining, and inventory</li>
+                    <li>Obtained short history and vitals per patient's chief complaint</li>
+                    <li>Prepared charts using EHR systems</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ── Projects ── -->
+        <section>
+            <h2>Projects</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">ThinkNeuro Research Intern</span>
+                </div>
+                <div class="entry-date">May 2025</div>
+                <ul>
+                    <li>Constructed research poster using R Programming bibliometric analysis for Computed Tomography, narrowing down to relevant literature and figures</li>
+                    <li>Presented findings in virtual symposium as fourth author</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Behavioral Experimental Design (BED) Capstone</span>
+                    <span class="entry-location">Miami, FL</span>
+                </div>
+                <div class="entry-date">May 2025</div>
+                <ul>
+                    <li>Developed draft proposal for an eczema study including literature review, abstract, introduction, methods, expected results, discussion, and conclusion</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ── Work ── -->
+        <section>
+            <h2>Work Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Connect Record Shop</span>
+                    <span class="entry-location">Fort Lauderdale, FL</span>
+                </div>
+                <div class="entry-sub">Volunteer → Sales Associate</div>
+                <div class="entry-date">November 2020 — Present</div>
+                <ul>
+                    <li>Aid in organizing records and CDs for events and sales</li>
+                    <li>Communicate effectively with staff and customers regarding concerns or questions</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ── Skills ── -->
+        <section>
+            <h2>Skills</h2>
+
+            <div class="skills-group">
+                <div class="skills-label">Technical</div>
+                <div class="tags">
+                    <span class="tag">Medical Terminology</span>
+                    <span class="tag">CPR / BLS</span>
+                    <span class="tag">Phlebotomy</span>
+                    <span class="tag">EKG</span>
+                    <span class="tag">CITI — HIPS &amp; Human Research</span>
+                    <span class="tag">Microsoft Excel &amp; Word</span>
+                    <span class="tag">IBM SPSS</span>
+                    <span class="tag">R Programming</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <div class="skills-label">Language</div>
+                <div class="tags">
+                    <span class="tag">Spanish — Proficient</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Clubs ── -->
+        <section>
+            <h2>Clubs &amp; Organizations</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Nu Rho Psi</span>
+                    <span class="entry-location">Miami, FL</span>
+                </div>
+                <div class="entry-sub">Honor Society Member &middot; Secretary</div>
+                <div class="entry-date">August 2024 — Present</div>
+                <ul>
+                    <li>Activities include speaker series, community service, and career development</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Medically Engaged Diverse Students (MEDS)</span>
+                    <span class="entry-location">Miami, FL</span>
+                </div>
+                <div class="entry-sub">Office Member</div>
+                <div class="entry-date">August 2024 — Present</div>
+                <ul>
+                    <li>Certification workshop with Medtrain in BLS/CPR and EKG/Phlebotomy Technician</li>
+                    <li>Donation events including Alex's Lemonade Stand for Childhood Cancer and RCMA Pregnant Families; speaker events with PA-C and Cardiologist</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Broward College Medical Volunteer Club</span>
+                    <span class="entry-location">Coconut Creek, FL</span>
+                </div>
+                <div class="entry-sub">Outreach Coordinator</div>
+                <div class="entry-date">August 2022 — May 2023</div>
+                <ul>
+                    <li>Fundraised for "The Period Project" and "Care Package" by collecting goods for the underserved</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>Elysa A. Barrera &middot; 2025</footer>
+
+    </div>
+</body>
+</html>
